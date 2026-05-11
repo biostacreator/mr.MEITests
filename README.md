@@ -64,6 +64,10 @@ Full documentation website on: https://biostacreator.github.io/mr.MEITests
 
 Full documentation website on: https://biostacreator.github.io/mr.MEITests
 
+## Documentation
+
+Full documentation website on: https://biostacreator.github.io/mr.MEITests
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -71,32 +75,17 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(mr.MEITests) # load the mr.MEITests package 
-attach(Meta_T2D) # attach the real analysis data 
-#> The following objects are masked from Meta_T2D (pos = 3):
-#> 
-#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
-#> The following objects are masked from Meta_T2D (pos = 4):
-#> 
-#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
-#> The following objects are masked from Meta_T2D (pos = 6):
-#> 
-#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
-#> The following objects are masked from Meta_T2D (pos = 7):
-#> 
-#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
-#> The following objects are masked from Meta_T2D (pos = 8):
-#> 
-#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
+data(Meta_T2D) # load the real analysis data 
 # analyze the example data with the MEI tests 
 mr_MEITests(
-    g_hat=b.exp, 
-    gse=se.exp, 
-    G_hat=b.out, 
-    Gse=se.out, 
-    EAF.exp=eaf.exp, 
-    EAF.out=eaf.out, 
-    eta=0.5, 
-    sel.pthr=5e-5) 
+    g_hat = Meta_T2D$b.exp, 
+    gse = Meta_T2D$se.exp, 
+    G_hat = Meta_T2D$b.out, 
+    Gse = Meta_T2D$se.out, 
+    EAF.exp = Meta_T2D$eaf.exp, 
+    EAF.out = Meta_T2D$eaf.out, 
+    eta = 0.5, 
+    sel.pthr = 5e-5) 
 #> Modified Egger intercept tests
 #> 
 #> IV selection threshold: 5e-05 
