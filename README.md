@@ -1,27 +1,23 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+
 
 # Modified Egger Intercept Tests for Mendelian Randomization
 
 <!-- badges: start -->
-
 [![R-CMD-check](https://github.com/biostacreator/mr.MEITests/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/biostacreator/mr.MEITests/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/biostacreator/mr.MEITests/graph/badge.svg)](https://app.codecov.io/gh/biostacreator/mr.MEITests)
+[![Codecov test coverage](https://codecov.io/gh/biostacreator/mr.MEITests/graph/badge.svg)](https://app.codecov.io/gh/biostacreator/mr.MEITests)
 <!-- badges: end -->
 
-`mr.MEITests` is an R package for detecting horizontal pleiotropy in
-two-sample summary-data Mendelian randomization using the modified Egger
-intercept (MEI) tests. The MEI test is constructed based on a
-bias-corrected Egger intercept estimator under the null hypothesis of no
-directional or correlated pleiotropy, accounting for measurement error
-and winner’s curse. The test statistics are obtained under two allele
-coding schemes, along with a combined version.
+`mr.MEITests` is an R package for detecting horizontal pleiotropy in two-sample summary-data Mendelian randomization using the modified Egger intercept (MEI) tests. The MEI test is constructed based on a bias-corrected Egger intercept estimator under the null hypothesis of no directional or correlated pleiotropy, accounting for measurement error and winner’s curse. The test statistics are obtained under two allele coding schemes, along with a combined version.
 
 ## Installation
 
-You can install the development version of mr.MEITests from
-[GitHub](https://github.com/) with:
+You can install the development version of mr.MEITests from [GitHub](https://github.com/) with:
 
 ``` r
 library(devtools)
@@ -29,53 +25,55 @@ install_github("biostacreator/mr.MEITests")
 ```
 
 ## Usage
+```
+mr_MEITests(
+    g_hat,
+    gse,
+    G_hat,
+    Gse,
+    EAF.exp,
+    EAF.out,
+    eta,
+    sel.pthr)
+```
+`g_hat`: A numeric vector of beta-coefficient values for genetic associations with the exposure variable.
 
-    mr_MEITests(
-        g_hat,
-        gse,
-        G_hat,
-        Gse,
-        EAF.exp,
-        EAF.out,
-        eta,
-        sel.pthr)
+`gse`: The standard errors associated with the beta-coefficients `g_hat`.
 
-`g_hat`: A numeric vector of beta-coefficient values for genetic
-associations with the exposure variable.
+`G_hat`: A numeric vector of beta-coefficient values for genetic associations with the outcome variable.
 
-`gse`: The standard errors associated with the beta-coefficients
-`g_hat`.
+`Gse`: The standard errors associated with the beta-coefficients `G_hat`.
 
-`G_hat`: A numeric vector of beta-coefficient values for genetic
-associations with the outcome variable.
+`EAF.exp`: A numeric vector of effect allele frequency in the exposure sample.
 
-`Gse`: The standard errors associated with the beta-coefficients
-`G_hat`.
+`EAF.out`: A numeric vector of effect allele frequency in the outcome sample.
 
-`EAF.exp`: A numeric vector of effect allele frequency in the exposure
-sample.
+`eta`: A parameter representing the standard deviation of the pseudo IV-exposure effect. By default, `eta=0.5`. 
 
-`EAF.out`: A numeric vector of effect allele frequency in the outcome
-sample.
-
-`eta`: A parameter representing the standard deviation of the pseudo
-IV-exposure effect. By default, `eta=0.5`.
-
-`sel.pthr`: The significance level threshold for IV selection. By
-default, `sel.pthr=5e-5`.
+`sel.pthr`: The significance level threshold for IV selection. By default, `sel.pthr=5e-5`.
 
 ## Documentation
 
-Full documentation website on:
-<https://biostacreator.github.io/mr.MEITests>
+Full documentation website on: https://biostacreator.github.io/mr.MEITests
+
+## Documentation
+
+Full documentation website on: https://biostacreator.github.io/mr.MEITests
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
+
 ``` r
 library(mr.MEITests) # load the mr.MEITests package 
 attach(Meta_T2D) # attach the real analysis data 
+#> The following objects are masked from Meta_T2D (pos = 3):
+#> 
+#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
+#> The following objects are masked from Meta_T2D (pos = 4):
+#> 
+#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
 # analyze the example data with the MEI tests 
 mr_MEITests(
     g_hat=b.exp, 
@@ -98,3 +96,4 @@ mr_MEITests(
 #>      Maximum Z-value combination         1.76e-04
 #> ------------------------------------------------------------------
 ```
+

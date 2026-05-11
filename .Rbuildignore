@@ -1,2 +1,4 @@
 ^mr\.MEITests\.Rproj$
 ^\.Rproj\.user$
+^\.github$
+^codecov\.yml$
