@@ -60,6 +60,10 @@ Full documentation website on: https://biostacreator.github.io/mr.MEITests
 
 Full documentation website on: https://biostacreator.github.io/mr.MEITests
 
+## Documentation
+
+Full documentation website on: https://biostacreator.github.io/mr.MEITests
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
@@ -72,6 +76,15 @@ attach(Meta_T2D) # attach the real analysis data
 #> 
 #>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
 #> The following objects are masked from Meta_T2D (pos = 4):
+#> 
+#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
+#> The following objects are masked from Meta_T2D (pos = 6):
+#> 
+#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
+#> The following objects are masked from Meta_T2D (pos = 7):
+#> 
+#>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
+#> The following objects are masked from Meta_T2D (pos = 8):
 #> 
 #>     A1, A2, b.exp, b.out, eaf.exp, eaf.out, se.exp, se.out, SNP
 # analyze the example data with the MEI tests 

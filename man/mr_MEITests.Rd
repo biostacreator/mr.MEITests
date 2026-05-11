@@ -2,7 +2,8 @@
 % Please edit documentation in R/MEITests.R
 \name{mr_MEITests}
 \alias{mr_MEITests}
-\title{The Modified Egger Intercept (MEI) Tests for Detecting Horizontal Pleiotropy in Mendelian Randomization}
+\title{The Modified Egger Intercept (MEI) Tests for Detecting Horizontal Pleiotropy in
+Mendelian Randomization}
 \usage{
 mr_MEITests(
   g_hat,
@@ -16,11 +17,13 @@ mr_MEITests(
 )
 }
 \arguments{
-\item{g_hat}{A numeric vector of beta-coefficient values for genetic associations with the exposure variable.}
+\item{g_hat}{A numeric vector of beta-coefficient values for genetic associations
+with the exposure variable.}
 
 \item{gse}{The standard errors associated with the beta-coefficients \code{g_hat}.}
 
-\item{G_hat}{A numeric vector of beta-coefficient values for genetic associations with the outcome variable.}
+\item{G_hat}{A numeric vector of beta-coefficient values for genetic associations
+with the outcome variable.}
 
 \item{Gse}{The standard errors associated with the beta-coefficients \code{G_hat}.}
 
@@ -28,49 +31,75 @@ mr_MEITests(
 
 \item{EAF.out}{A numeric vector of effect allele frequency in the outcome sample.}
 
-\item{eta}{A parameter representing the standard deviation of the pseudo IV-exposure effect. By default, \code{eta=0.5}.}
+\item{eta}{A parameter representing the standard deviation of the pseudo IV-exposure
+effect. By default, \code{eta=0.5}.}
 
-\item{sel.pthr}{The significance level threshold for IV selection. By default, \code{sel.pthr=5e-5}.}
+\item{sel.pthr}{The significance level threshold for IV selection. By default,
+\code{sel.pthr=5e-5}.}
 }
 \value{
 The output from the function is a \code{MEITests} object containing:
 
-\item{Zvalue_major}{Z-value from the MEI test under the major allele referenced coding scheme.}
+\item{Zvalue_major}{Z-value from the MEI test under the major allele referenced
+coding scheme.}
 \item{Pvalue_major}{P-value associated with \code{Zvalue_major}.}
-\item{Zvalue_normal}{Z-value from the MEI test under the normal allele referenced coding scheme.}
+\item{Zvalue_normal}{Z-value from the MEI test under the normal allele referenced
+coding scheme.}
 \item{Pvalue_normal}{P-value associated with \code{Zvalue_normal}.}
-\item{Pvalue_combine}{The P-value from the combined MEI test statistics obtained under major and normal allele referenced coding schemes.}
+\item{Pvalue_combine}{The P-value from the combined MEI test statistics obtained
+under major and normal allele referenced coding schemes.}
 \item{SNPsNum}{The number of SNPs after IV selection.}
 \item{sel.pthr}{The significance level threshold for IV selection.}
 }
 \description{
-The modified Egger intercept (MEI) tests are developed to detect horizontal pleiotropy in two-sample summary-data Mendelian randomization.
+The modified Egger intercept (MEI) tests are developed to detect
+horizontal pleiotropy in two-sample summary-data Mendelian randomization.
 }
 \details{
-The modified Egger intercept (MEI) tests are developed to detect horizontal pleiotropy in two-sample Mendelian
-randomization with summary statistics, i.e., an exposure dataset (with IV-exposure effect \code{g_hat} and standard error
-\code{gse}) and an outcome dataset (with IV-outcome effect \code{G_hat} and standard error \code{Gse}).
+The modified Egger intercept (MEI) tests are developed to detect horizontal
+pleiotropy in two-sample Mendelian
+randomization with summary statistics, i.e., an exposure dataset (with IV-exposure
+effect \code{g_hat} and standard error
+\code{gse}) and an outcome dataset (with IV-outcome effect \code{G_hat} and standard
+error \code{Gse}).
 
-We recommend that the input datasets be pre-processed with filtering using the rerandomization threshold approach,
-harmonisation, and clumping.  \code{eta} and \code{sel.pthr} should be consistent with the parameters used during pre-filtering.
+We recommend that the input datasets be pre-processed with filtering using the
+rerandomization threshold approach,
+harmonisation, and clumping.  \code{eta} and \code{sel.pthr} should be consistent
+with the parameters used during pre-filtering.
 
-The MEI test under a specific allele coding scheme is constructed by deriving a bias-corrected Egger intercept estimator
-along with its variance under the null hypothesis of absence of both directional and correlated pleiotropy, leveraging
-the rerandomized inverse variance weighted (RIVW) estimator (see Ma et al., 2023). Under the null hypothesis, the test
-statistic follows a asymptotic standard normal distribution.
+The MEI test under a specific allele coding scheme is constructed by deriving
+a bias-corrected Egger intercept estimator along with its variance under the
+null hypothesis of absence of both directional and correlated pleiotropy, leveraging
+the rerandomized inverse variance weighted (RIVW) estimator (see Ma et al., 2023).
+Under the null hypothesis, the test statistic follows a asymptotic standard normal
+distribution.
 
-The MEI test statistic is computed under two allele coding schemes, along with a combined version:
+The MEI test statistic is computed under two allele coding schemes, along with
+a combined version:
 (i) major allele referenced coding;
-(ii) normal allele referenced coding, where the normal allele from the exposure GWAS is used as the reference; and
-(iii) a combined version, which aggregates the two test statistics under the major and normal allele schemes using the
+(ii) normal allele referenced coding, where the normal allele from the exposure
+GWAS is used as the reference; and
+(iii) a combined version, which aggregates the two test statistics under the
+major and normal allele schemes using the
 maximum Z-value approach.
 
-\code{EAF.exp} and \code{EAF.out} are used to recode the summary data into the major allele referenced coding scheme.
-(1) If both \code{EAF.exp} and \code{EAF.out} > 0.5, the IV-exposure and IV-outcome effects are flipped.
-(2) If one of \code{EAF.exp} and \code{EAF.out} is missing, the SNP is flipped if the available value > 0.5.
+\code{EAF.exp} and \code{EAF.out} are used to recode the summary data into the
+major allele referenced coding scheme.
+(1) If both \code{EAF.exp} and \code{EAF.out} > 0.5, the IV-exposure and IV-outcome
+effects are flipped.
+(2) If one of \code{EAF.exp} and \code{EAF.out} is missing, the SNP is flipped
+if the available value > 0.5.
 (3) In all other cases, the original allele coding is retained.
 }
 \examples{
-mr_MEITests(g_hat=b.exp, gse=se.exp, G_hat=b.out, Gse=se.out, EAF.exp=eaf.exp, EAF.out=eaf.out, eta=0.5, sel.pthr=5e-5)
+mr_MEITests(g_hat=b.exp,
+                      gse=se.exp,
+                      G_hat=b.out,
+                      Gse=se.out,
+                      EAF.exp=eaf.exp,
+                      EAF.out=eaf.out,
+                      eta=0.5,
+                      sel.pthr=5e-5)
 
 }
