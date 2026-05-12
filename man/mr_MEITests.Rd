@@ -95,13 +95,13 @@ if the available value > 0.5.
 \examples{
 attach(Meta_T2D)
 mr_MEITests(g_hat=b.exp,
-                      gse=se.exp,
-                      G_hat=b.out,
-                      Gse=se.out,
-                      EAF.exp=eaf.exp,
-                      EAF.out=eaf.out,
-                      eta=0.5,
-                      sel.pthr=5e-5)
+            gse=se.exp,
+            G_hat=b.out,
+            Gse=se.out,
+            EAF.exp=eaf.exp,
+            EAF.out=eaf.out,
+            eta=0.5,
+            sel.pthr=5e-5)
 detach(Meta_T2D)
 
 }
