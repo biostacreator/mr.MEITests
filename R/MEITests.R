@@ -68,7 +68,9 @@
 #'  \item{SNPsNum}{The number of SNPs after IV selection.}
 #'  \item{sel.pthr}{The significance level threshold for IV selection.}
 #'
-#' @examples mr_MEITests(g_hat=b.exp,
+#' @examples
+#' attach(Meta_T2D)
+#' mr_MEITests(g_hat=b.exp,
 #'                       gse=se.exp,
 #'                       G_hat=b.out,
 #'                       Gse=se.out,
@@ -76,6 +78,7 @@
 #'                       EAF.out=eaf.out,
 #'                       eta=0.5,
 #'                       sel.pthr=5e-5)
+#' detach(Meta_T2D)
 #'
 #' @export
 

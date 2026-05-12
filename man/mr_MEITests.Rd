@@ -93,6 +93,7 @@ if the available value > 0.5.
 (3) In all other cases, the original allele coding is retained.
 }
 \examples{
+attach(Meta_T2D)
 mr_MEITests(g_hat=b.exp,
                       gse=se.exp,
                       G_hat=b.out,
@@ -101,5 +102,6 @@ mr_MEITests(g_hat=b.exp,
                       EAF.out=eaf.out,
                       eta=0.5,
                       sel.pthr=5e-5)
+detach(Meta_T2D)
 
 }
