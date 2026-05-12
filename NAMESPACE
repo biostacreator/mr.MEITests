@@ -2,3 +2,9 @@
 
 export(mr_MEITests)
 exportClasses(MEITests)
+importFrom(methods,new)
+importFrom(methods,slot)
+importFrom(stats,dnorm)
+importFrom(stats,pnorm)
+importFrom(stats,qnorm)
+importFrom(stats,rnorm)

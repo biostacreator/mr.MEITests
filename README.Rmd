@@ -91,6 +91,10 @@ Full documentation website on: https://biostacreator.github.io/mr.MEITests
 
 Full documentation website on: https://biostacreator.github.io/mr.MEITests
 
+## Documentation
+
+Full documentation website on: https://biostacreator.github.io/mr.MEITests
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:

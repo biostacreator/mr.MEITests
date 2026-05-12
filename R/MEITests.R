@@ -67,6 +67,9 @@
 #'  \item{SNPsNum}{The number of SNPs after IV selection.}
 #'  \item{sel.pthr}{The significance level threshold for IV selection.}
 #'
+#' @importFrom stats dnorm pnorm qnorm rnorm
+#' @importFrom methods new slot
+#'
 #' @examples
 #' attach(Meta_T2D)
 #' mr_MEITests(g_hat=b.exp,

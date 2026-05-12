@@ -16,5 +16,7 @@ BugReports: https://github.com/biostacreator/mr.MEITests/issues
 Depends: 
     R (>= 3.5)
 Imports:
-    mvtnorm (>= 1.1-0)
+    mvtnorm (>= 1.1-0),
+    stats,
+    methods
 LazyData: true
