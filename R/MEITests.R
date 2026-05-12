@@ -13,7 +13,6 @@
 #' @param Gse The standard errors associated with the beta-coefficients \code{G_hat}.
 #' @param EAF.exp A numeric vector of effect allele frequency in the exposure sample.
 #' @param EAF.out A numeric vector of effect allele frequency in the outcome sample.
-#' @param Gse The standard errors associated with the beta-coefficients \code{G_hat}.
 #' @param eta A parameter representing the standard deviation of the pseudo IV-exposure
 #' effect. By default, \code{eta=0.5}.
 #' @param sel.pthr The significance level threshold for IV selection. By default,
