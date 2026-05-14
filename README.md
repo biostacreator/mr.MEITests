@@ -52,7 +52,6 @@ mr_MEITests(
 
 `sel.pthr`: The significance level threshold for IV selection. By default, `sel.pthr=5e-5`.
 
-
 ## Documentation
 
 Full documentation website on: https://biostacreator.github.io/mr.MEITests
@@ -81,7 +80,7 @@ mr_MEITests(
 #> Number of variants : 343 
 #> Null hypothesis: absence of both directional and correlated pleiotropy
 #> ------------------------------------------------------------------
-#>                           Method Z_value  P_value
+#>                           Method Z-value  P-value
 #>   Major-allele-referenced coding  -0.093    0.926
 #>  Normal-allele-referenced coding   3.922 8.78e-05
 #>      Maximum Z-value combination         1.76e-04

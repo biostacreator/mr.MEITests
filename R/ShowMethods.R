@@ -37,6 +37,9 @@ setMethod("show",
               stringsAsFactors = FALSE
             )
 
+            colnames(output.table)[2] <- "Z-value"
+            colnames(output.table)[3] <- "P-value"
+
             cat("Modified Egger intercept tests\n\n")
 
             cat("IV selection threshold:", object@sel.pthr, "\n")
@@ -45,7 +48,7 @@ setMethod("show",
             cat("Null hypothesis: absence of both directional and correlated pleiotropy\n")
 
             cat("------------------------------------------------------------------\n")
-            print(output.table, quote = F, row.names = FALSE, justify= "left")
+            print(output.table, quote = F, row.names = FALSE, justify= "none")
             cat("------------------------------------------------------------------\n")
 
           }

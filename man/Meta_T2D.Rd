@@ -2,17 +2,17 @@
 \alias{Meta_T2D}
 \docType{data}
 \title{
-Example dataset for genetic association meta-analysis of type 2 diabetes (T2D)
+Example dataset for genetic association meta-analysis of a metabolic trait (free cholesterol to total lipids ratio in large high-density lipoprotein) and type 2 diabetes
 }
 \description{
-This dataset is an example data frame containing variables needed for two-sample Mendelian randomization or genetic association meta-analysis. It is intended to demonstrate the workflow of functions in this package (e.g., \code{\link{mr_MEITests}}), and users can use it as a template to prepare their own data.
+This dataset is an example data frame containing the variables needed for the modified Egger tests in two-sample Mendelian randomization. It has been pre-processed with filtering using the rerandomization threshold approach (\code{eta=0.5} and \code{sel.pthr=5e-5}), followed by harmonisation and clumping. The dataset is intended to demonstrate the workflow of functions in this package (e.g., \code{\link{mr_MEITests}}), and users can may it as a template to prepare their own data.
 }
 \format{
 A data frame with rows corresponding to genetic variants (e.g., SNPs) and the following 6 numeric variables:
 \describe{
-  \item{\code{SNP}}{SNP}
-  \item{\code{A1}}{A1}
-  \item{\code{A2}}{A2}
+  \item{\code{SNP}}{The rs identifier of the single nucleotide polymorphism.}
+  \item{\code{A1}}{Character vector specifying the effect allele for each SNP. All reported effect estimates (\code{b.exp} and \code{b.out}) are defined with respect to this allele.}
+  \item{\code{A2}}{Character vector specifying the other allele for each SNP.}
   \item{\code{b.exp}}{Numeric vector of beta coefficients for genetic associations with the exposure variable. Corresponds to the parameter \code{g_hat}.}
   \item{\code{se.exp}}{Standard errors of \code{b.exp}. Corresponds to the parameter \code{gse}.}
   \item{\code{b.out}}{Numeric vector of beta coefficients for genetic associations with the outcome variable. Corresponds to the parameter \code{G_hat}.}
@@ -22,10 +22,15 @@ A data frame with rows corresponding to genetic variants (e.g., SNPs) and the fo
 }
 }
 \details{
-This dataset is simulated and does not reflect real genetic association results. All variables are numeric vectors of the same length (i.e., number of genetic variants). When using analysis functions from this package, users can directly pass the columns of this data frame to the respective arguments.
+All variables have the same length (i.e., number of selected genetic variants). When using analysis functions from this package, users can directly pass the columns of this data frame to the respective arguments.
+
+Note that the exposure trait is the free cholesterol to total lipids ratio in large high-density lipoprotein, and the outcome is type 2 diabetes.
 }
 \source{
-Simulated data, for illustrative and testing purposes only.
+The metabolic trait (free cholesterol to total lipids ratio in large HDL) was obtained from the UK Biobank.
+See: Richardson TG, Leyden GM, Wang Q, et al. (2022). Characterising metabolomic signatures of lipid-modifying therapies through drug target Mendelian  randomisation. *PLoS Biology*, 20(2):e3001547.
+The type 2 diabetes dataset was obtained from the FinnGen study.
+See: Kurki MI, Karjalainen J, Palta P, et al. (2023). FinnGen provides genetic insights from a well-phenotyped isolated population. *Nature*, 613:508–518.
 }
 \examples{
 # View the first few rows

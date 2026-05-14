@@ -25,10 +25,9 @@
 #' \code{gse}) and an outcome dataset (with IV-outcome effect \code{G_hat} and standard
 #' error \code{Gse}).
 #'
-#' We recommend that the input datasets be pre-processed with filtering using the
-#' rerandomization threshold approach,
-#' harmonisation, and clumping.  \code{eta} and \code{sel.pthr} should be consistent
-#' with the parameters used during pre-filtering.
+#' We recommend that the input dataset be pre-processed with filtering using the
+#' rerandomization threshold approach, harmonisation, and clumping.  \code{eta}
+#' and \code{sel.pthr} should be consistent with the parameters used during pre-filtering.
 #'
 #' The MEI test under a specific allele coding scheme is constructed by deriving
 #' a bias-corrected Egger intercept estimator along with its variance under the
